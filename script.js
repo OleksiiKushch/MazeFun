@@ -9,6 +9,7 @@ const dungeonMap = [
 ];
 
 let playerPosition = { x: 1, y: 1 };
+let gameOver = false;
 
 function drawMap() {
   gameBoard.innerHTML = '';
@@ -33,6 +34,8 @@ function drawMap() {
 }
 
 function movePlayer(dx, dy) {
+  if (gameOver) return;
+
   const newX = playerPosition.x + dx;
   const newY = playerPosition.y + dy;
 
@@ -44,6 +47,7 @@ function movePlayer(dx, dy) {
     playerPosition.x = newX;
     playerPosition.y = newY;
     drawMap();
+    gameOver = true;
     setTimeout(showWinMessage, 100);
   }
 }
