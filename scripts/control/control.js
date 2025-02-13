@@ -1,0 +1,22 @@
+import { movePlayer } from '../entity/player.js';
+
+export function registerControls() {
+  const gameBoard = document.getElementById('game-board');
+
+  document.addEventListener('keydown', (event) => {
+    switch (event.key) {
+      case 'ArrowUp':
+        movePlayer(0, -1, gameBoard);
+        break;
+      case 'ArrowDown':
+        movePlayer(0, 1, gameBoard);
+        break;
+      case 'ArrowLeft':
+        movePlayer(-1, 0, gameBoard);
+        break;
+      case 'ArrowRight':
+        movePlayer(1, 0, gameBoard);
+        break;
+    }
+  });
+}
