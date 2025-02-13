@@ -14,7 +14,7 @@ export function createGameInfoUI() {
 
     <div class="info-section">Map Info</div>
     <div class="info-content">
-      Seed: <span id="map-seed" class="copyable">${SEED}</span>
+      Seed: <span id="map-seed" class="for-copyable">${SEED}</span>
       <button id="copy-seed-btn" class="copy-btn" aria-label="Copy Seed">
         <img src="/resources/copy-icon.svg" alt="Copy" class="copy-icon">
       </button>

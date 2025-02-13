@@ -8,9 +8,7 @@ body {
   user-select: none;
 }
 
-.copyable {
-  user-select: text;
-  cursor: text;
+.for-copyable {
   flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;
