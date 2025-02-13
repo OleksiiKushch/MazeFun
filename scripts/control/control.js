@@ -19,4 +19,9 @@ export function registerControls() {
         break;
     }
   });
+
+  document.querySelector('.arrow.up').addEventListener('click', () => movePlayer(0, -1));
+  document.querySelector('.arrow.down').addEventListener('click', () => movePlayer(0, 1));
+  document.querySelector('.arrow.left').addEventListener('click', () => movePlayer(-1, 0));
+  document.querySelector('.arrow.right').addEventListener('click', () => movePlayer(1, 0));
 }
