@@ -1,0 +1,21 @@
+#win-message {
+  position: fixed;
+  font-size: 140px;
+  color: rgb(0, 255, 0);
+  font-weight: bold;
+  text-shadow: 4px 4px 10px rgba(0, 75, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: background-color 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+#win-message.show {
+  background-color: rgba(35, 35, 35, 0.75);
+  opacity: 1;
+}
