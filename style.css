@@ -180,9 +180,10 @@ body {
   transition: background 0.2s, transform 0.1s;
 }
 
-.arrow:active {
+.arrow:active,
+.arrow.active {
   background-color: rgba(70, 70, 70, 0.95);
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 .controls-middle {

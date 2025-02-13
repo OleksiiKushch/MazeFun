@@ -6,7 +6,7 @@ export let playerPosition = { x: 1, y: 1 };
 let stepsTaken = 0;
 let gameOver = false;
 
-export function movePlayer(dx, dy, gameBoard) {
+export function movePlayer(dx, dy) {
   if (gameOver) return;
 
   const newX = playerPosition.x + dx;
@@ -17,13 +17,13 @@ export function movePlayer(dx, dy, gameBoard) {
     playerPosition.y = newY;
     stepsTaken++;
     updateStepCount(stepsTaken);
-    drawMap(gameBoard);
+    drawMap();
   } else if (dungeonMap[newY] && dungeonMap[newY][newX] === 2) {
     playerPosition.x = newX;
     playerPosition.y = newY;
     stepsTaken++;
     updateStepCount(stepsTaken);
-    drawMap(gameBoard);
+    drawMap();
     gameOver = true;
     setTimeout(showWinMessage, 100);
   }
