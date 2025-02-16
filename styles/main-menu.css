@@ -1,0 +1,204 @@
+#main-menu-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: rgb(215, 215, 215);
+  padding: 12px 18px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#main-menu-btn:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#main-menu-modal {
+  position: fixed;
+  top: 60px;
+  left: 10px;
+  width: 200px;
+  background-color: rgba(45, 45, 45, 0.95);
+  color: rgb(210, 210, 210);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+#main-menu-modal.show {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+#main-menu-modal button {
+  background: none;
+  color: rgb(180, 180, 180);
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 5px 5px 15px 5px;
+  transition: color 0.2s ease-in-out;
+}
+
+#main-menu-modal button:hover {
+  color: rgb(215, 215, 215);
+}
+
+.game-version {
+  font-size: 12px;
+  color: rgba(170, 170, 170, 0.9);
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-family: monospace;
+}
+
+#new-game-modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+#new-game-modal.show {
+  display: flex;
+}
+
+.new-game-modal-container {
+  background: rgba(50, 50, 50, 0.95);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 250px;
+}
+
+.new-game-modal-container h2 {
+  color: rgb(215, 215, 215);
+}
+
+.new-game-modal-container hr {
+  border: none;
+  height: 4px;
+  background-color: rgb(100, 100, 100);
+  margin: 5px 0;
+}
+
+.new-game-modal-container input {
+  padding: 8px;
+  border: 1px solid rgb(100, 100, 100);
+  background: rgb(40, 40, 40);
+  color: rgb(235, 235, 235);
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  width: 230px;
+  text-align: left;
+}
+
+.new-game-modal-container input::-webkit-outer-spin-button,
+.new-game-modal-container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.new-game-modal-container input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.new-game-modal-container input:focus {
+  outline: none;
+  border-color: rgb(0, 190, 150);
+}
+
+.new-game-modal-container label {
+  color: rgb(220, 220, 220);
+}
+
+.new-game-modal-container .additional-options label {
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  margin-bottom: 3px;
+}
+
+.new-game-modal-container .additional-options input {
+  display: flex;
+}
+
+.new-game-modal-container .use-additional-options {
+  display: flex;
+  align-items: center;
+}
+
+.new-game-modal-container .use-additional-options input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: rgb(60, 60, 60);
+  border: 2px solid rgb(120, 120, 120);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.new-game-modal-container .use-additional-options input:checked::before {
+  content: '✔';
+  font-size: 12px;
+  color: rgb(0, 190, 150);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 8px 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.cancel-button {
+  background: rgb(80, 80, 80);
+  color: rgb(245, 245, 245);
+}
+
+.cancel-button:hover {
+  background: rgb(100, 100, 100);
+}
+
+.approve-button {
+  background: rgb(0, 160, 120);
+  color: rgb(245, 245, 245);
+}
+
+.approve-button:hover {
+  background: rgb(0, 190, 150);
+}
