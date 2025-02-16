@@ -22,10 +22,9 @@ export function createMainMenuUI() {
           <input type="checkbox" id="use-additional-options" />
           <label for="use-additional-options">Use Additional Options</label>
         </div>
-
-        <hr/>
     
         <div class="additional-options">
+          <hr style="margin-bottom: 10px;" />
           <label for="map-seed">Seed of Map:</label>
           <input type="number" id="map-seed" min="0" max="999999" placeholder="Seed">
           <br/>
@@ -34,13 +33,12 @@ export function createMainMenuUI() {
           <br/>
           <label for="map-height">Height of Map:</label>
           <input type="number" id="map-height" min="4" max="50" placeholder="Height">
+          <hr style="margin-top: 20px;" />
         </div>
-
-        <hr/>
     
         <div class="modal-buttons">
-          <button class="cancel-button">Cancel</button>
-          <button class="approve-button">GO!</button>
+          <button id="new-game-modal-cancel-btn" class="cancel-button">Cancel</button>
+          <button id="new-game-modal-approve-btn" class="approve-button">GO!</button>
         </div>
       </div>
     `;
@@ -51,6 +49,36 @@ export function createMainMenuUI() {
   });
 
   document.getElementById('main-menu-new-game-btn').addEventListener('click', () => {
-    newGameModal.classList.toggle('show');
+    newGameModal.style.display = 'flex';
+    setTimeout(() => newGameModal.classList.add('show'), 50);
+  });
+
+  document.getElementById('new-game-modal-cancel-btn').addEventListener('click', () => {
+    newGameModal.classList.remove('show');
+    setTimeout(() => (newGameModal.style.display = 'none'), 300);
+
+    newGameModal.querySelectorAll('input').forEach((input) => {
+      if (input.type === 'checkbox') {
+        input.checked = false;
+      } else {
+        input.value = '';
+      }
+    });
+
+    document.querySelector('.additional-options').classList.remove('show');
+  });
+
+  document.getElementById('new-game-modal-approve-btn').addEventListener('click', () => {
+    // Start new game.
+  });
+
+  document.getElementById('use-additional-options').addEventListener('change', function () {
+    const additionalOptions = document.querySelector('.additional-options');
+
+    if (this.checked) {
+      additionalOptions.classList.add('show');
+    } else {
+      additionalOptions.classList.remove('show');
+    }
   });
 }
