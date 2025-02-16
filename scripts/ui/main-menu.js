@@ -18,28 +18,31 @@ export function createMainMenuUI() {
       <div class="new-game-modal-container">
         <h2>Start New Game</h2>
 
-        <div class="use-additional-options">
-          <input type="checkbox" id="use-additional-options" />
-          <label for="use-additional-options">Use Additional Options</label>
-        </div>
-    
-        <div class="additional-options">
-          <hr style="margin-bottom: 10px;" />
-          <label for="map-seed">Seed of Map:</label>
-          <input type="number" id="map-seed" min="0" max="999999" placeholder="Seed">
-          <br/>
-          <label for="map-width">Width of Map:</label>
-          <input type="number" id="map-width" min="4" max="50" placeholder="Width">
-          <br/>
-          <label for="map-height">Height of Map:</label>
-          <input type="number" id="map-height" min="4" max="50" placeholder="Height">
-          <hr style="margin-top: 20px;" />
-        </div>
-    
-        <div class="modal-buttons">
-          <button id="new-game-modal-cancel-btn" class="cancel-button">Cancel</button>
-          <button id="new-game-modal-approve-btn" class="approve-button">GO!</button>
-        </div>
+        <form>
+          <div class="use-additional-options">
+            <input type="checkbox" id="use-additional-options" />
+            <label for="use-additional-options">Use Additional Options</label>
+          </div>
+      
+          <div class="additional-options">
+            <hr style="margin-bottom: 10px;" />
+            <label for="map-seed">Seed of Map <span class="tip">(<span class="tip-value">generated randomly</span> by default)</span>:</label>
+            <input type="number" id="map-seed" min="0" max="999999" placeholder="Seed">
+            <br/>
+            <label for="map-width">Width of Map <span class="tip">(<span class="tip-value">15</span> by default)</span>:</label>
+            <input type="number" id="map-width" min="4" max="50" placeholder="Width">
+            <br/>
+            <label for="map-height">Height of Map <span class="tip">(<span class="tip-value">15</span> by default)</span>:</label>
+            <input type="number" id="map-height" min="4" max="50" placeholder="Height">
+            <hr style="margin-top: 20px;" />
+          </div>
+      
+          <div class="modal-buttons">
+            <button type="button" id="new-game-modal-cancel-btn" class="cancel-button">Cancel</button>
+            <button type="submit" id="new-game-modal-approve-btn" class="approve-button">GO!</button>
+          </div>
+        </form>
+
       </div>
     `;
   document.body.appendChild(newGameModal);

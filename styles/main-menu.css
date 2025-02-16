@@ -101,6 +101,7 @@
 }
 
 .new-game-modal-container h2 {
+  margin: 18px;
   color: rgb(215, 215, 215);
 }
 
@@ -184,7 +185,7 @@
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .modal-buttons button {
@@ -225,4 +226,15 @@
 .new-game-modal-container .additional-options.show {
   opacity: 1;
   max-height: 500px;
+}
+
+.tip {
+  font-size: 12px;
+  color: rgb(180, 180, 180);
+  font-style: italic;
+}
+
+.tip-value {
+  font-weight: bold;
+  color: rgb(220, 220, 220);
 }
