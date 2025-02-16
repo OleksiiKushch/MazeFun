@@ -6,5 +6,5 @@ export function showWinMessage() {
 
   setTimeout(() => {
     winMessage.classList.add('show');
-  }, 10);
+  }, 50);
 }
